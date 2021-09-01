@@ -79,7 +79,7 @@ def btncmd():
     mri_table = mri_table.rename(columns={'주민번호':'생년월일'}) # 열 이름을 생년월일로 변경
 
     # 만나이 계산
-    today = datetime.today() # 오늘 날짜 받아오기
+    today = datetime.date.today() # 오늘 날짜 받아오기
     age = pd.DataFrame()
     age["age"] = mri_table['생년월일'].apply(
         lambda x: today.year - x.year - ((today.month, today.day) < (x.month, x.day)))
