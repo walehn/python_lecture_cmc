@@ -8,30 +8,29 @@ from openpyxl import Workbook
 from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.utils import get_column_letter
 from openpyxl.styles import Alignment, Font, Border, Side
-from datetime import datetime
-from tqdm import tqdm
+import datetime
 
 root = tk.Tk()
 root.title("MSK MRI extractor")
-root.geometry("450x300+800+500") # 가로 * 세로 + x좌표 + y좌표
+root.geometry("450x300") # 가로 * 세로 + x좌표 + y좌표
 root.resizable(False,False) # 창 크기 변경 불가
 
 # Title Label
-label1 = Label(root, text="MSK MRI 추출기 GUI 1.0 created by H.Kim, M.D. ", font = "맑은고딕 14")
+label1 = Label(root, text="MSK MRI 추출기 GUI 1.1 created by H.Kim, M.D.", font = "맑은고딕 14")
 label1.place(x=5,y=0)
 
 # Label - result file name
-label1 = Label(root, text="1. 저장할 파일명 입력: ", font = "맑은고딕 12")
+label1 = Label(root, text="1. 결과를 저장할 파일명 입력: ", font = "맑은고딕 12")
 label1.place(x=5,y=30)
 
 # 파일 이름 받아오는 entry 생성
 ety = tk.Entry(root, width=30, font = "맑은고딕 12")
 ety.place(x=5,y=60)
-default_file_name = datetime.today().strftime('%m%d')
+default_file_name = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%m%d')
 ety.insert(END, default_file_name+".xlsx")
 
 # Label - result file name
-label1 = Label(root, text="2. 진행 상황: ", font = "맑은고딕 12")
+label1 = Label(root, text="2. 진행 상황: 아래 Extract now 버튼을 누르면 시작합니다.", font = "맑은고딕 12")
 label1.place(x=5,y=90)
 
 # progress bar
@@ -54,16 +53,43 @@ def btncmd():
     mri_table = pd.DataFrame()
     mri_table = pd.concat(df, ignore_index=True)
 
-    # 필요없는 값들 다 지우기
+    # 필요없는 행/열들 지우기
     mri_table.drop([0, 1, 2, 3], inplace=True)
     mri_table.dropna(axis=1, inplace=True)
     mri_table.rename(columns=mri_table.iloc[0],inplace=True)
     mri_table.drop([4], inplace=True)
-    mri_table.drop(["주민번호","진료일자","병실"],axis=1, inplace=True)
 
     # str --> int 형변환
     mri_table["NO"] = pd.to_numeric(mri_table["NO"])
     mri_table["등록번호"] = pd.to_numeric(mri_table["등록번호"])
+
+    ## 주민 번호를 생년월일로 변환
+    pre_mil = mri_table[pd.to_numeric(mri_table["주민번호"].str[7]) < 3].copy()
+    pre_mil["주민번호"] = "19" + pre_mil["주민번호"]  # 주민번호 뒷자리가 1/2 인 경우 19를 붙임
+
+    post_mil = mri_table[pd.to_numeric(mri_table["주민번호"].str[7]) > 2].copy()
+    post_mil["주민번호"] = "20" + post_mil["주민번호"] # # 주민번호 뒷자리가 3/4 인 경우 20을 붙임
+
+    mri_table = pd.merge(pre_mil,post_mil, how='outer') # 다시 합침
+    mri_table = mri_table.sort_values(by='NO') # 재정렬
+
+    mri_table["주민번호"] = mri_table["주민번호"].str[:8] # 주민번호 뒷자리 없애고 생년월일만 남김
+
+    mri_table["주민번호"] = mri_table["주민번호"].astype('datetime64[ns]') # 변수를 날짜형으로 형변환
+    mri_table = mri_table.rename(columns={'주민번호':'생년월일'}) # 열 이름을 생년월일로 변경
+
+    # 만나이 계산
+    today = datetime.today() # 오늘 날짜 받아오기
+    age = pd.DataFrame()
+    age["age"] = mri_table['생년월일'].apply(
+        lambda x: today.year - x.year - ((today.month, today.day) < (x.month, x.day)))
+    mri_table["생년월일"] = age["age"]
+    mri_table = mri_table.rename(columns={'생년월일':'나이'})
+    
+    # 나이 17세 미만 환자 삭제
+    mri_table = mri_table[mri_table["나이"] > 17]
+    # 필요 없는 열들 삭제
+    mri_table.drop(["나이","진료일자","병실"],axis=1, inplace=True)
 
     ## remove list 파일 읽어서 Data Frame으로 저장
 
@@ -74,7 +100,7 @@ def btncmd():
     remove_list_table = pd.concat(df2, ignore_index=True)
 
     ## remove list와 일치하는 처방 삭제하기
-    txt.insert(END,"\n\nNon-MSK MRI 삭제 중..... \n")
+    txt.insert(END,"\n\nNon-MSK MRI 삭제 중... \n")
     table_length = len(remove_list_table)
     for i in range(table_length):
         mri_table = mri_table[~mri_table["처방명"].str.contains(remove_list_table["키워드"][i])]
