@@ -16,7 +16,7 @@ root.geometry("450x300") # 가로 * 세로 + x좌표 + y좌표
 root.resizable(False,False) # 창 크기 변경 불가
 
 # Title Label
-label1 = Label(root, text="MSK MRI 추출기 GUI 1.1 created by H.Kim, M.D.", font = "맑은고딕 14")
+label1 = Label(root, text="MSK MRI 추출기 GUI v1.2 created by H.Kim, M.D.", font = "맑은고딕 14")
 label1.place(x=5,y=0)
 
 # Label - result file name
@@ -30,7 +30,7 @@ default_file_name = (datetime.date.today() + datetime.timedelta(days=1)).strftim
 ety.insert(END, default_file_name+".xlsx")
 
 # Label - result file name
-label1 = Label(root, text="2. 진행 상황: 아래 Extract now 버튼을 누르면 시작합니다.", font = "맑은고딕 12")
+label1 = Label(root, text="2. 추출 실행: 아래 Extract now 버튼을 누르면 시작합니다.", font = "맑은고딕 12")
 label1.place(x=5,y=90)
 
 # progress bar
@@ -47,7 +47,7 @@ def btncmd():
     dir_path = filedialog.askopenfile(
     parent=root,initialdir=os.getcwd(),title='Please select a file',
     filetypes=(('xls files','*.xls'),('all files','*.*')))
-    txt.insert(END,"다음 경로의 파일이 로드되었습니다. \n"+dir_path.name)
+    txt.insert(END,"다음 경로의 MRI list 파일이 로드되었습니다. \n"+dir_path.name)
     df = pd.read_excel(dir_path.name, sheet_name=None)
 
     mri_table = pd.DataFrame()
@@ -92,15 +92,17 @@ def btncmd():
     mri_table.drop(["나이","진료일자","병실"],axis=1, inplace=True)
 
     ## remove list 파일 읽어서 Data Frame으로 저장
-
-    remove_list_path = "./remove_list.xlsx"
-    df2 = pd.read_excel(remove_list_path, sheet_name=None, engine='openpyxl')
+    try:
+        remove_list_path = "./remove_list.xlsx"
+        df2 = pd.read_excel(remove_list_path, sheet_name=None, engine='openpyxl')
+    except IOError:
+        txt.insert(END,"\n\nremove_list.xlsx 가 실행파일과 같은 경로에 존재하지 않습니다... \n")
 
     remove_list_table = pd.DataFrame()
     remove_list_table = pd.concat(df2, ignore_index=True)
 
     ## remove list와 일치하는 처방 삭제하기
-    txt.insert(END,"\n\nNon-MSK MRI 삭제 중... \n")
+    txt.insert(END,"\n\nNon-MSK MRI 및 소아 MRI 삭제 완료... \n")
     table_length = len(remove_list_table)
     for i in range(table_length):
         mri_table = mri_table[~mri_table["처방명"].str.contains(remove_list_table["키워드"][i])]
@@ -143,7 +145,7 @@ def btncmd():
     ## 최종 결과물을 엑셀 파일로 저장
     savefilename = ety.get()
     wb.save(savefilename)
-    txt.insert(END,"\n\n결과가 "+savefilename+" 으로 저장되었습니다 !!!")
+    txt.insert(END,"\n\n추출 결과가 "+savefilename+" 으로 저장되었습니다!")
 
 # 버튼 생성
 btn1 = tk.Button(root, padx=10, pady=5, text = "Extract now", command=btncmd)
