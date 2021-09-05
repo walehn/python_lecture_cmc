@@ -16,7 +16,7 @@ root.geometry("450x300") # 가로 * 세로 + x좌표 + y좌표
 root.resizable(False,False) # 창 크기 변경 불가
 
 # Title Label
-label1 = Label(root, text="MSK MRI 추출기 GUI v1.2 created by H.Kim, M.D.", font = "맑은고딕 14")
+label1 = Label(root, text="MSK MRI 추출기 GUI v1.3 created by H.Kim, M.D.", font = "맑은고딕 14")
 label1.place(x=5,y=0)
 
 # Label - result file name
@@ -107,6 +107,9 @@ def btncmd():
     for i in range(table_length):
         mri_table = mri_table[~mri_table["처방명"].str.contains(remove_list_table["키워드"][i])]
         my_progress['value'] += 1/table_length*100
+
+    ## MRI 검사실 순으로 정령
+    mri_table = mri_table.sort_values(by=["검사실"], ascending= True)
 
     # No 1부터 다시 매기기
     mri_table["NO"] = range(1, len(mri_table)+1)
