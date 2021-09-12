@@ -1,5 +1,4 @@
-# python_lecture_cmc
-September python lecture
+# CMC Radiology Academic meeting 2021-2nd Semester
 
 ![Python강의#2](https://user-images.githubusercontent.com/74954538/132978148-714ea249-8b97-4459-a799-6189f2bf734d.PNG)
 
