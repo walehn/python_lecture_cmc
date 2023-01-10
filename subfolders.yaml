@@ -1,0 +1,165 @@
+- in_dir: Adobe
+  out_dir: data_nifti
+  filename: Adobe_nifti
+- in_dir: AhnLab
+  out_dir: data_nifti
+  filename: AhnLab_nifti
+- in_dir: Bandizip
+  out_dir: data_nifti
+  filename: Bandizip_nifti
+- in_dir: Beyond Compare 4
+  out_dir: data_nifti
+  filename: Beyond Compare 4_nifti
+- in_dir: Common Files
+  out_dir: data_nifti
+  filename: Common Files_nifti
+- in_dir: CUAssistant
+  out_dir: data_nifti
+  filename: CUAssistant_nifti
+- in_dir: DAUM
+  out_dir: data_nifti
+  filename: DAUM_nifti
+- in_dir: DIFX
+  out_dir: data_nifti
+  filename: DIFX_nifti
+- in_dir: Docker
+  out_dir: data_nifti
+  filename: Docker_nifti
+- in_dir: Google
+  out_dir: data_nifti
+  filename: Google_nifti
+- in_dir: Inkscape
+  out_dir: data_nifti
+  filename: Inkscape_nifti
+- in_dir: Intel
+  out_dir: data_nifti
+  filename: Intel_nifti
+- in_dir: Internet Explorer
+  out_dir: data_nifti
+  filename: Internet Explorer_nifti
+- in_dir: ITK-SNAP 3.8
+  out_dir: data_nifti
+  filename: ITK-SNAP 3.8_nifti
+- in_dir: Logitech
+  out_dir: data_nifti
+  filename: Logitech_nifti
+- in_dir: LyX 2.3
+  out_dir: data_nifti
+  filename: LyX 2.3_nifti
+- in_dir: Microsoft Analysis Services
+  out_dir: data_nifti
+  filename: Microsoft Analysis Services_nifti
+- in_dir: Microsoft MPI
+  out_dir: data_nifti
+  filename: Microsoft MPI_nifti
+- in_dir: Microsoft Office
+  out_dir: data_nifti
+  filename: Microsoft Office_nifti
+- in_dir: Microsoft SQL Server
+  out_dir: data_nifti
+  filename: Microsoft SQL Server_nifti
+- in_dir: Microsoft Update Health Tools
+  out_dir: data_nifti
+  filename: Microsoft Update Health Tools_nifti
+- in_dir: Microsoft.NET
+  out_dir: data_nifti
+  filename: Microsoft.NET_nifti
+- in_dir: millie
+  out_dir: data_nifti
+  filename: millie_nifti
+- in_dir: ModifiableWindowsApps
+  out_dir: data_nifti
+  filename: ModifiableWindowsApps_nifti
+- in_dir: MSBuild
+  out_dir: data_nifti
+  filename: MSBuild_nifti
+- in_dir: MyEnTunnel
+  out_dir: data_nifti
+  filename: MyEnTunnel_nifti
+- in_dir: Notepad++
+  out_dir: data_nifti
+  filename: Notepad++_nifti
+- in_dir: NPKI
+  out_dir: data_nifti
+  filename: NPKI_nifti
+- in_dir: NVIDIA Corporation
+  out_dir: data_nifti
+  filename: NVIDIA Corporation_nifti
+- in_dir: NVIDIA GPU Computing Toolkit
+  out_dir: data_nifti
+  filename: NVIDIA GPU Computing Toolkit_nifti
+- in_dir: PCHealthCheck
+  out_dir: data_nifti
+  filename: PCHealthCheck_nifti
+- in_dir: R
+  out_dir: data_nifti
+  filename: R_nifti
+- in_dir: RadiAntViewer64bit
+  out_dir: data_nifti
+  filename: RadiAntViewer64bit_nifti
+- in_dir: Realtek
+  out_dir: data_nifti
+  filename: Realtek_nifti
+- in_dir: Reference Assemblies
+  out_dir: data_nifti
+  filename: Reference Assemblies_nifti
+- in_dir: rempl
+  out_dir: data_nifti
+  filename: rempl_nifti
+- in_dir: RIDI
+  out_dir: data_nifti
+  filename: RIDI_nifti
+- in_dir: RStudio
+  out_dir: data_nifti
+  filename: RStudio_nifti
+- in_dir: RUXIM
+  out_dir: data_nifti
+  filename: RUXIM_nifti
+- in_dir: Samsung
+  out_dir: data_nifti
+  filename: Samsung_nifti
+- in_dir: Tableau
+  out_dir: data_nifti
+  filename: Tableau_nifti
+- in_dir: Uninstall Information
+  out_dir: data_nifti
+  filename: Uninstall Information_nifti
+- in_dir: Windows Defender
+  out_dir: data_nifti
+  filename: Windows Defender_nifti
+- in_dir: Windows Defender Advanced Threat Protection
+  out_dir: data_nifti
+  filename: Windows Defender Advanced Threat Protection_nifti
+- in_dir: Windows Mail
+  out_dir: data_nifti
+  filename: Windows Mail_nifti
+- in_dir: Windows Media Player
+  out_dir: data_nifti
+  filename: Windows Media Player_nifti
+- in_dir: Windows Multimedia Platform
+  out_dir: data_nifti
+  filename: Windows Multimedia Platform_nifti
+- in_dir: Windows NT
+  out_dir: data_nifti
+  filename: Windows NT_nifti
+- in_dir: Windows Photo Viewer
+  out_dir: data_nifti
+  filename: Windows Photo Viewer_nifti
+- in_dir: Windows Portable Devices
+  out_dir: data_nifti
+  filename: Windows Portable Devices_nifti
+- in_dir: Windows Security
+  out_dir: data_nifti
+  filename: Windows Security_nifti
+- in_dir: Windows Sidebar
+  out_dir: data_nifti
+  filename: Windows Sidebar_nifti
+- in_dir: WindowsApps
+  out_dir: data_nifti
+  filename: WindowsApps_nifti
+- in_dir: WindowsPowerShell
+  out_dir: data_nifti
+  filename: WindowsPowerShell_nifti
+- in_dir: Wizvera
+  out_dir: data_nifti
+  filename: Wizvera_nifti

@@ -1,0 +1,56 @@
+in_dir,out_dir,filename
+Adobe,data_nifti,Adobe_nifti
+AhnLab,data_nifti,AhnLab_nifti
+Bandizip,data_nifti,Bandizip_nifti
+Beyond Compare 4,data_nifti,Beyond Compare 4_nifti
+Common Files,data_nifti,Common Files_nifti
+CUAssistant,data_nifti,CUAssistant_nifti
+DAUM,data_nifti,DAUM_nifti
+DIFX,data_nifti,DIFX_nifti
+Docker,data_nifti,Docker_nifti
+Google,data_nifti,Google_nifti
+Inkscape,data_nifti,Inkscape_nifti
+Intel,data_nifti,Intel_nifti
+Internet Explorer,data_nifti,Internet Explorer_nifti
+ITK-SNAP 3.8,data_nifti,ITK-SNAP 3.8_nifti
+Logitech,data_nifti,Logitech_nifti
+LyX 2.3,data_nifti,LyX 2.3_nifti
+Microsoft Analysis Services,data_nifti,Microsoft Analysis Services_nifti
+Microsoft MPI,data_nifti,Microsoft MPI_nifti
+Microsoft Office,data_nifti,Microsoft Office_nifti
+Microsoft SQL Server,data_nifti,Microsoft SQL Server_nifti
+Microsoft Update Health Tools,data_nifti,Microsoft Update Health Tools_nifti
+Microsoft.NET,data_nifti,Microsoft.NET_nifti
+millie,data_nifti,millie_nifti
+ModifiableWindowsApps,data_nifti,ModifiableWindowsApps_nifti
+MSBuild,data_nifti,MSBuild_nifti
+MyEnTunnel,data_nifti,MyEnTunnel_nifti
+Notepad++,data_nifti,Notepad++_nifti
+NPKI,data_nifti,NPKI_nifti
+NVIDIA Corporation,data_nifti,NVIDIA Corporation_nifti
+NVIDIA GPU Computing Toolkit,data_nifti,NVIDIA GPU Computing Toolkit_nifti
+PCHealthCheck,data_nifti,PCHealthCheck_nifti
+R,data_nifti,R_nifti
+RadiAntViewer64bit,data_nifti,RadiAntViewer64bit_nifti
+Realtek,data_nifti,Realtek_nifti
+Reference Assemblies,data_nifti,Reference Assemblies_nifti
+rempl,data_nifti,rempl_nifti
+RIDI,data_nifti,RIDI_nifti
+RStudio,data_nifti,RStudio_nifti
+RUXIM,data_nifti,RUXIM_nifti
+Samsung,data_nifti,Samsung_nifti
+Tableau,data_nifti,Tableau_nifti
+Uninstall Information,data_nifti,Uninstall Information_nifti
+Windows Defender,data_nifti,Windows Defender_nifti
+Windows Defender Advanced Threat Protection,data_nifti,Windows Defender Advanced Threat Protection_nifti
+Windows Mail,data_nifti,Windows Mail_nifti
+Windows Media Player,data_nifti,Windows Media Player_nifti
+Windows Multimedia Platform,data_nifti,Windows Multimedia Platform_nifti
+Windows NT,data_nifti,Windows NT_nifti
+Windows Photo Viewer,data_nifti,Windows Photo Viewer_nifti
+Windows Portable Devices,data_nifti,Windows Portable Devices_nifti
+Windows Security,data_nifti,Windows Security_nifti
+Windows Sidebar,data_nifti,Windows Sidebar_nifti
+WindowsApps,data_nifti,WindowsApps_nifti
+WindowsPowerShell,data_nifti,WindowsPowerShell_nifti
+Wizvera,data_nifti,Wizvera_nifti
