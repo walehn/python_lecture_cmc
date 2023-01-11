@@ -1,0 +1,19 @@
+Options:
+  isGz: false
+  isFlipY: false
+  isVerbose: false
+  isCreateBIDS: false
+  isOnlySingleFile: false
+Files:
+- in_dir: D:/data/test/input/22109643_20220719142740
+  out_dir: D:/data/test/output_nifti
+  filename: 22109643_20220719_nifti
+- in_dir: D:/data/test/input/22109643_20230103120452
+  out_dir: D:/data/test/output_nifti
+  filename: 22109643_20230103_nifti
+- in_dir: D:/data/test/input/24915465_20220622140925
+  out_dir: D:/data/test/output_nifti
+  filename: 24915465_20220622_nifti
+- in_dir: D:/data/test/input/24915465_20221214095457
+  out_dir: D:/data/test/output_nifti
+  filename: 24915465_20221214_nifti
