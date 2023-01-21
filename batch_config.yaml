@@ -6,14 +6,14 @@ Options:
   isOnlySingleFile: false
 Files:
 - in_dir: D:/data/test/input/22109643_20220719142740
-  out_dir: D:/data/test/output_nifti
+  out_dir: D:/data/test/output_nifti/22109643_20220719
   filename: 22109643_20220719_nifti
 - in_dir: D:/data/test/input/22109643_20230103120452
-  out_dir: D:/data/test/output_nifti
+  out_dir: D:/data/test/output_nifti/22109643_20230103
   filename: 22109643_20230103_nifti
 - in_dir: D:/data/test/input/24915465_20220622140925
-  out_dir: D:/data/test/output_nifti
+  out_dir: D:/data/test/output_nifti/24915465_20220622
   filename: 24915465_20220622_nifti
 - in_dir: D:/data/test/input/24915465_20221214095457
-  out_dir: D:/data/test/output_nifti
+  out_dir: D:/data/test/output_nifti/24915465_20221214
   filename: 24915465_20221214_nifti
